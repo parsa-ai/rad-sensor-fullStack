@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@keyframes slide {
+    0% {
+        transform: translateX(0%);
+    }
+    100%{
+        transform: translateX(-50%);
+    }   
+}
+
+div#blogBox h3{
+    @apply text-2xl font-semibold;
+}
+
+div#blogBox {
+    @apply text-lg text-justify
+}
+div#blogBox ul {
+    @apply pl-8 flex flex-col gap-5
+}
+
+div#blogBox ul li {
+    @apply list-disc
+}
+
+div#blogBox ul li h4{
+    @apply text-lg font-semibold
+}
+/* *{
+    outline: 1px solid #fff;
+} */
+
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+
+
