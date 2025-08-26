@@ -219,7 +219,7 @@ export const BlogItems = [
         text:<p>From groundwater salinity to temperature shifts, knowing what’s happening below helps...</p>
     },
 ]
-export const BaseUrl = 'http://127.0.0.1:8000'
+export const BaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost'
 
 export const da = {
   "id": 2,

@@ -14,33 +14,26 @@ class ListItemsSerializer(serializers.ModelSerializer):
 
 class BlogSectionSerializer(serializers.ModelSerializer):
     list_items = ListItemsSerializer(many=True, read_only=True)
+
     class Meta:
         model = BlogSection
-        fields = ['heading', 'content', 'order', 'image', 'list_items', ]
+        fields = ['heading', 'content', 'order', 'image', 'list_items']
 
 class BlogPostSerializer(serializers.ModelSerializer):
     category = CategorySerializer()
 
     class Meta:
         model = BlogPost
-        fields = [
-            'id', 'title','content', 'category', 'image',
-        ]
+        fields = ['id', 'title','content', 'category', 'image']
 
 class BlogPostDetailSerializer(serializers.ModelSerializer):
     sections = BlogSectionSerializer(many=True, read_only=True)
     category = CategorySerializer(many=False, read_only=True)
     class Meta:
         model = BlogPost
-        fields = [
-            'id', 'title', 'content', 'category',
-            'image', 'sections'
-        ]
+        fields = ['id', 'title', 'content', 'category', 'image', 'sections']
 
 class BlogPostsByCategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = BlogPost
-        fields = [
-            'id', 'title', 'content',
-            'image'
-        ]
+        fields = ['id', 'title', 'content', 'image']

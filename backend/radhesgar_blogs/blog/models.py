@@ -9,7 +9,7 @@ class Category(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.slug:
-            self.slug = slugify(self.title, allow_unicode=True)
+            self.slug = slugify(self.name, allow_unicode=True)
         super().save(*args, **kwargs)
     class Meta:
         verbose_name_plural = 'Categories'
@@ -20,7 +20,7 @@ class Category(models.Model):
 
 class BlogPost(models.Model):
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, related_name="posts")
-    image = models.ImageField( blank=True, null=True, upload_to="./blog_images")
+    image = models.ImageField(blank=True, null=True, upload_to="blog_images/")
     title = models.CharField(max_length=200)
     slug = models.SlugField(unique=True, allow_unicode=True)
     content = models.TextField( blank=True, null=True)
@@ -40,7 +40,7 @@ class BlogPost(models.Model):
 
 class BlogSection(models.Model):
     blog_post = models.ForeignKey(BlogPost, related_name='sections', on_delete=models.CASCADE)
-    image = models.ImageField( blank=True, null=True, upload_to="./blog_images")
+    image = models.ImageField( blank=True, null=True, upload_to="blog_images/")
     heading = models.CharField(max_length=255, blank=True, null=True)
     content = models.TextField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)

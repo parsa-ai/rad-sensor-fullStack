@@ -1,24 +1,30 @@
 FROM python:3.11-slim
 
 ENV PYTHONDONTWRITEBYTECODE=1
-
 ENV PYTHONUNBUFFERED=1
 
 WORKDIR /app
 
-RUN apt-get update && apt-get install -y build-essential libpq-dev && rm -rf /var/lib/apt/lists/*
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+        gcc \
+        libc6-dev \
+    && rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt /app/
-
 RUN pip install --no-cache-dir -r requirements.txt
+
+RUN adduser --disabled-password --gecos '' appuser
+
+RUN mkdir -p /app/data /app/staticfiles /app/media \
+    && chown -R appuser:appuser /app
 
 COPY . /app/
 
-RUN mkdir -p /app/data /app/staticfiles
-
+RUN python manage.py check
+RUN python manage.py makemigrations
+RUN python manage.py migrate
 RUN python manage.py collectstatic --noinput
-
-RUN adduser --disabled-password --gecos '' appuser
 
 RUN chown -R appuser:appuser /app
 
