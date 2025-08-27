@@ -46,7 +46,7 @@ function Footer() {
   return (
     <footer>
       <Container >
-        <div className='min-h-[496px] w-full border border-white/35 rounded-3xl mb-14 shadow-[0px_0px_53px_-20px_#fff,inset_0_0_39px_-20px_#fff] px-16  py-12  md:px-32  md:py-24 '>
+        <div className='min-h-[496px] w-full border border-white/35 rounded-3xl mb-14 md:shadow-[0px_0px_53px_-20px_#fff,inset_0_0_39px_-20px_#fff] px-16  py-12  md:px-32  md:py-24 '>
           <div className='flex gap-4 h-fit flex-col md:flex-row items-center justify-center md:items-start md:justify-start'>
             <div className='w-14 h-0.5  md:h-14 rounded-full md:w-0.5 bg-white ' />
             <img src='/images/logo.svg' alt="logo" className='w-24 ' />
