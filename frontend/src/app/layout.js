@@ -2,14 +2,14 @@ import Footer from "./components/ui/Footer";
 import Header from "./components/ui/Header";
 import "./globals.css";
 
-import { Montserrat } from 'next/font/google';
+// import { Montserrat } from 'next/font/google';
 
-const montserrat = Montserrat({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-montserrat',
-  display: 'swap',
-});
+// const montserrat = Montserrat({
+//   subsets: ['latin'],
+//   weight: ['300', '400', '500', '600', '700'],
+//   variable: '--font-montserrat',
+//   display: 'swap',
+// });
 
 
 export const metadata = {
@@ -20,7 +20,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`bg-[#16141F] text-[#F7F7F7] pt-16 ${montserrat.className}`}>
+      <body className={`bg-[#16141F] text-[#F7F7F7] pt-16 `}>
         <Header></Header>
         {children}
         <Footer></Footer>
