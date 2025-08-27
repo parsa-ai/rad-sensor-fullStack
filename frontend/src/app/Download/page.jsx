@@ -2,6 +2,7 @@ import { BaseUrl } from "app/components/data/data"
 import Container from "app/components/ui/Container"
 import DownloadIcon from "app/components/ui/icons/DownloadIcon"
 import { redirect } from "next/navigation"
+import { MediaUrl } from '../components/data/data'
 
 async function page() {
 
@@ -24,9 +25,9 @@ async function page() {
           {Datasheets.map((item, index) => (
             <article key={index} >
 
-              <a href={BaseUrl + item.datasheet} target="_blank" rel="noopener noreferrer" className="flex justify-between items-center px-3 md:pl-0 md:px-10 pl-0 py-2 bg-white/10 backdrop-blur-2xl rounded-2xl ">
+              <a href={MediaUrl + item.datasheet} target="_blank" rel="noopener noreferrer" className="flex justify-between items-center px-3 md:pl-0 md:px-10 pl-0 py-2 bg-white/10 backdrop-blur-2xl rounded-2xl ">
                 {item.product_image && <div className="flex  w-20 h-20 md:w-40 md:h-40 items-center justify-center ">
-                  <img src={BaseUrl + item.product_image} alt={item.product_name} className="w-full h-full object-contain " />
+                  <img src={MediaUrl + item.product_image} alt={item.product_name} className="w-full h-full object-contain " />
                 </div>}
                 <div className="grow-1 flex justify-center items-center">
                   <div className=" w-fit ">

@@ -30,6 +30,7 @@ services:
     environment:
       - NODE_ENV=production
       - NEXT_PUBLIC_API_BASE_URL=http://django-backend:8000
+      - NEXT_PUBLIC_API_MEDIA_URL=http://localhost/
     depends_on:
       - django-backend
     networks:

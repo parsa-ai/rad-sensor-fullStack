@@ -3,6 +3,7 @@ import Container from "../../components/ui/Container";
 import { BaseUrl, da } from "app/components/data/data";
 import { redirect } from "next/navigation";
 import Link from "next/link";
+import { MediaUrl } from '../../components/data/data'
 
 async function page({ params }) {
 
@@ -40,10 +41,10 @@ async function page({ params }) {
           </article>
           <article className="flex gap-5 w-full flex-col md:flex-row">
             <div className="flex-1 md:h-[450px] min-h-[260px] rounded-t-[90px] md:rounded-tr-none md:rounded-tl-[170px] bg-[linear-gradient(119.78deg,rgba(255,255,255,0.58)44.98%,rgba(207,207,207,0.58)93.03%)] flex justify-center items-end">
-              {data.product_images[0] && <img src={BaseUrl + data.product_images[0].image} alt="" className="w-60 md:w-72 max-h-[200px] md:max-h-max object-contain " />}
+              {data.product_images[0] && <img src={MediaUrl + data.product_images[0].image} alt="" className="w-60 md:w-72 max-h-[200px] md:max-h-max object-contain " />}
             </div>
             <div className="flex-1 md:h-[450px] min-h-[260px] rounded-b-[90px] md:rounded-b-none md:rounded-tr-[170px] bg-[linear-gradient(119.78deg,rgba(255,255,255,0.58)44.98%,rgba(207,207,207,0.58)93.03%)] flex justify-center items-end">
-              {data.product_images[1] && <img src={BaseUrl + data.product_images[1].image} alt="" className="w-60 md:w-72 max-h-[200px] md:max-h-max object-contain " />}
+              {data.product_images[1] && <img src={MediaUrl + data.product_images[1].image} alt="" className="w-60 md:w-72 max-h-[200px] md:max-h-max object-contain " />}
 
             </div>
           </article>
@@ -91,7 +92,7 @@ async function page({ params }) {
               </ul>
             </div>
             <div className="flex-1 flex justify-center items-center">
-              {data.product_images[2] && <img src={BaseUrl + data.product_images[2].image} alt="" className="w-72" />}
+              {data.product_images[2] && <img src={MediaUrl + data.product_images[2].image} alt="" className="w-72" />}
               <img src='/images/Products/ctd/fullCtd.png' alt="" className="w-40 mb-10 md:mb-0 md:w-72" />
             </div>
           </article>

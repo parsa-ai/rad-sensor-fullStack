@@ -3,6 +3,7 @@ import Container from '../components/ui/Container'
 import TheBlog from '../components/pages/Blogs/TheBlog'
 import ArrowIcon from '../components/ui/icons/ArrowIcon'
 import { BaseUrl } from '../components/data/data'
+import { MediaUrl } from '../components/data/data'
 import { redirect } from 'next/navigation'
 
 
@@ -29,7 +30,7 @@ export default async function page() {
           </h3>
           <article className='flex gap-20 items-center'>
             <div className='w-[398px] h-[240px]'>
-              <img src={BaseUrl + Latests.image} className='w-full h-full rounded-4xl object-cover' />
+              <img src={MediaUrl + Latests.image} className='w-full h-full rounded-4xl object-cover' />
             </div>
             <div className='flex flex-col w-[550px]  text-white gap-3'>
               <span className='text-lg text-[#AEAEAE]'>{Latests.category.name}</span>

@@ -219,8 +219,8 @@ export const BlogItems = [
         text:<p>From groundwater salinity to temperature shifts, knowing what’s happening below helps...</p>
     },
 ]
-export const BaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost'
-
+export const BaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://django-backend:8000'
+export const MediaUrl =  'http://localhost'
 export const da = {
   "id": 2,
   "page_title": "EC Sensors: Precise & Fast Monitoring!",
