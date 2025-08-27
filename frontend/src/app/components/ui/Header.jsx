@@ -39,11 +39,11 @@ function Header() {
       indexContent: 'Blogs',
       href: '/Blogs'
     },
-    {
-      id: 5,
-      indexContent: <LngBtn />,
-      href: null
-    },
+    // {
+    //   id: 5,
+    //   indexContent: <LngBtn />,
+    //   href: null
+    // },
     {
       id: 6,
       indexContent: 'Download',
@@ -122,10 +122,10 @@ const Sidebar = ({ setIsOpen }) => {
 
   return (
     <div className="w-full h-dvh flex justify-between  pb-6 flex-col  text-white min-h-dvh  font-medium text-base">
-      <div className='border-b-2 py-6  px-7 flex gap-2 justify-start items-center' >
+      {/* <div className='border-b-2 py-6  px-7 flex gap-2 justify-start items-center' >
         <img src="/images/usa.png" className='w-fit h-fit' alt="" />
         Language
-      </div>
+      </div> */}
       <div className={`flex flex-col justify-between h-full  px-7 py-9`}>
         <Link onClick={() => { setIsOpen(false) }} href='/' className="font-semibold">Home</Link>
 
