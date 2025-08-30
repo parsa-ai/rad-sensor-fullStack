@@ -1,7 +1,7 @@
 "use client"
 import { useState } from "react"
 import Container from "../components/ui/Container"
-import { BaseUrl } from "app/components/data/data"
+import { MediaUrl } from "app/components/data/data"
 
 function Page() {
   const [formData, setFormData] = useState({
@@ -19,17 +19,27 @@ function Page() {
     })
   }
 
+  function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault()
 
+    const csrfToken = getCookie('csrftoken');
+    console.log(csrfToken)
     try {
-      const res = await fetch(BaseUrl+"/api/contact/", {
+      const res = await fetch(MediaUrl + "/api/contact/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "X-CSRFToken": csrfToken,
         },
         body: JSON.stringify(formData)
       })
+      console.log(res);
 
       if (res.ok) {
         alert("Message sent successfully!")
